@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+     <loc>/</loc>
+     <lastmod>2018-07-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/installation/</loc>
+     <lastmod>2018-07-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/quickstart/</loc>
+     <lastmod>2018-07-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/diffuser_calculator/</loc>
+     <lastmod>2018-07-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/about_diffusers/</loc>
+     <lastmod>2018-07-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+</urlset>

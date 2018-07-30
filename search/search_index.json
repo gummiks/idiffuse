@@ -1,0 +1,74 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "iDiffuse: on-sky photometric precisions with diffusers\n\n\nWelcome to the iDiffuse documentation, a Python package to calculate expected diffuser-assisted photometric precisions from the ground.\n\n\niDiffuse is currently heavily focused on calculating the diffuser-assisted photometric precision of ARCTIC on the ARC 3.5m Telescope at Apache Point Observatory. \n\n\nHowever, iDiffuse is written in a way that it is easy to modify and calculate diffuser-assisted photometric precisions for other telescopes.\n\n\nContents:\n\n\n\n\nInstallation\n\n\nGetting Started\n\n\nSizing Diffusers\n\n\nExtending iDiffuser for other telescopes \n\n\n\n\nMore information on diffusers\n\n\nTake a look at the following discussions for further discussion on diffusers for high precision photometry applications:\n\n\n\n\nMore about diffusers on this website\n\n\nPaper I\n\n\nPaper II",
+            "title": "Home"
+        },
+        {
+            "location": "/#idiffuse-on-sky-photometric-precisions-with-diffusers",
+            "text": "Welcome to the iDiffuse documentation, a Python package to calculate expected diffuser-assisted photometric precisions from the ground.  iDiffuse is currently heavily focused on calculating the diffuser-assisted photometric precision of ARCTIC on the ARC 3.5m Telescope at Apache Point Observatory.   However, iDiffuse is written in a way that it is easy to modify and calculate diffuser-assisted photometric precisions for other telescopes.  Contents:   Installation  Getting Started  Sizing Diffusers  Extending iDiffuser for other telescopes",
+            "title": "iDiffuse: on-sky photometric precisions with diffusers"
+        },
+        {
+            "location": "/#more-information-on-diffusers",
+            "text": "Take a look at the following discussions for further discussion on diffusers for high precision photometry applications:   More about diffusers on this website  Paper I  Paper II",
+            "title": "More information on diffusers"
+        },
+        {
+            "location": "/installation/",
+            "text": "Installation\n\n\nTesting",
+            "title": "Installation"
+        },
+        {
+            "location": "/installation/#installation",
+            "text": "Testing",
+            "title": "Installation"
+        },
+        {
+            "location": "/quickstart/",
+            "text": "Getting Started",
+            "title": "Getting Started"
+        },
+        {
+            "location": "/quickstart/#getting-started",
+            "text": "",
+            "title": "Getting Started"
+        },
+        {
+            "location": "/diffuser_calculator/",
+            "text": "Sizing Diffusers\n\n\nWe provide the followin on-line calculator to help determine the size of a diffuser for use on a telescope. \n\n\nOnline Calculator\n\n\nThe following online calculator calculates the expected Point Spread Function (PSF) size of an Engineered Diffuser in a converging / collimated beam, returning the Full-Width-at-Half-Maximum (FWHM) of the resulting top-hat PSF.\n\n\nNotes:\n\n\n\n\nAssumes a top-hat PSF\n\n\nDistance from the detector should be the optical distance, i.e., it assumes this has accounted for the optical thickness (thickness times the index of refraction of a glass) of the materials\n\n\nThis equation is valid to first order. For more thorough analyzis, we suggest full non-sequential optical modeling in Zemax. \n\n\n\n\n\n\n\n\n\n\n\n\n\n    \nCalculating Expected Diffuser PSF FWHM\n\n    \n\n       \nOpening Angle (deg):\n\n             \n\n           \n\n        \n\n    \n\n    \n\n       \nDiffuser-to-detector distance (mm):\n\n             \n\n        \n\n        \n\n    \n\n    \n\n    \n\n       \nPixel Size (micron):\n\n             \n\n        \n\n        \n\n    \n\n    \n\n    \n\n       \nPlate Scale (\"/pix):\n\n             \n\n        \n\n        \n\n    \n\n    \n\n        \n\n        or\n        \n\n    \n\n    \nNOTE: Distance is optical length (i.e., weighted by the index of refraction).\n\n    \nDefault values are values for the ARCTIC/diffuser system\n\n    \n\n       \nDiffused PSF FWHM (pix):\n\n             \n\n           \n\n         \n\n    \n\n    \n\n       \nDiffused PSF FWHM (\"):\n\n             \n\n           \n\n         \n\n    \n\n\n\n\n\n\n\n\n(function () {\n    function getTanFromDegrees(degrees) {\n        return ( Math.tan(degrees * Math.PI / 180) );\n    }\n\n    function get_diffused_FWHM(angle, distance, pixelsize, platescale) {\n        // Calculate diffuser FWHM\n        // INPUT:\n        //    angle in degrees\n        //    distance in mm\n        //    pixelsize in microns\n        //    platescale in arcsec / pix\n        // OUTPUT:\n        //    FWHM in pixels\n        angle = parseFloat(angle);\n        distance = parseFloat(distance);\n        pixelsize = parseFloat(pixelsize);\n        platescale = parseFloat(platescale);\n        fwhm_in_pix = 2*getTanFromDegrees(angle/2)*distance/(pixelsize/1000);\n        return ( parseFloat(fwhm_in_pix).toFixed(2) );\n    }\n\n    var diffuserForm = document.getElementById(\"diffuserform\");\n    if (diffuserForm) {\n        diffuserForm.onsubmit = function () {\n            fwhm_pix = get_diffused_FWHM(this.angle.value,this.distance.value,this.pixelsize.value,this.platescale.value);\n            fwhm_arcsec = fwhm_pix * this.platescale.value ;\n            this.fwhm_pix.value = fwhm_pix;\n            this.fwhm_arcsec.value = parseFloat(fwhm_arcsec).toFixed(2);\n            return false;\n        };\n    }\n}());\n\n\n\n\nPython Function",
+            "title": "Sizing Diffusers"
+        },
+        {
+            "location": "/diffuser_calculator/#sizing-diffusers",
+            "text": "We provide the followin on-line calculator to help determine the size of a diffuser for use on a telescope.",
+            "title": "Sizing Diffusers"
+        },
+        {
+            "location": "/diffuser_calculator/#online-calculator",
+            "text": "The following online calculator calculates the expected Point Spread Function (PSF) size of an Engineered Diffuser in a converging / collimated beam, returning the Full-Width-at-Half-Maximum (FWHM) of the resulting top-hat PSF.  Notes:   Assumes a top-hat PSF  Distance from the detector should be the optical distance, i.e., it assumes this has accounted for the optical thickness (thickness times the index of refraction of a glass) of the materials  This equation is valid to first order. For more thorough analyzis, we suggest full non-sequential optical modeling in Zemax.",
+            "title": "Online Calculator"
+        },
+        {
+            "location": "/diffuser_calculator/#python-function",
+            "text": "",
+            "title": "Python Function"
+        },
+        {
+            "location": "/about_diffusers/",
+            "text": "About Diffusers\n\n\nDiffusers can be most easily installed in a telescope by putting them in a dual filter wheel. This makes it easy to change between diffused and non-diffused observations (useful to find the field and focus), and to choose which filter to pair with the diffuser. The figure below gives an example of a diffuser in a dual filter wheel. \n\n\n\n\nThe following video compares defocused and diffused PSFs.\n\n\nThe defocused PSF is irregular and changes with seeing and other atmospheric effects, while the diffused PSF is stable throughout the night.\n\n\n\n\n\nFurther reading\n\n\nFurther reading about diffusers for precision photometry applications can be found in the following papers:\n\n\n\n\nPaper I\n\n\nPaper II",
+            "title": "About Diffusers"
+        },
+        {
+            "location": "/about_diffusers/#about-diffusers",
+            "text": "Diffusers can be most easily installed in a telescope by putting them in a dual filter wheel. This makes it easy to change between diffused and non-diffused observations (useful to find the field and focus), and to choose which filter to pair with the diffuser. The figure below gives an example of a diffuser in a dual filter wheel.    The following video compares defocused and diffused PSFs.  The defocused PSF is irregular and changes with seeing and other atmospheric effects, while the diffused PSF is stable throughout the night.",
+            "title": "About Diffusers"
+        },
+        {
+            "location": "/about_diffusers/#further-reading",
+            "text": "Further reading about diffusers for precision photometry applications can be found in the following papers:   Paper I  Paper II",
+            "title": "Further reading"
+        }
+    ]
+}

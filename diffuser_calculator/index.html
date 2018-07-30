@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Sizing Diffusers - iDiffuse</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Sizing Diffusers";
+    var mkdocs_page_input_path = "diffuser_calculator.md";
+    var mkdocs_page_url = "/diffuser_calculator/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+
+<a href='/' class='icon icon-home'> iDiffuse</a>
+
+<a href='/'><img width=100px border-radius=0 src='/img/idiffuse6.png'></a>
+
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../installation/">Installation</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../quickstart/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Sizing Diffusers</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#sizing-diffusers">Sizing Diffusers</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#online-calculator">Online Calculator</a></li>
+        
+            <li><a class="toctree-l3" href="#python-function">Python Function</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about_diffusers/">About Diffusers</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">iDiffuse</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Sizing Diffusers</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/gummiks/idiffuse#root/diffuser_calculator.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="sizing-diffusers">Sizing Diffusers</h1>
+<p>We provide the followin on-line calculator to help determine the size of a diffuser for use on a telescope. </p>
+<h2 id="online-calculator">Online Calculator</h2>
+<p>The following online calculator calculates the expected Point Spread Function (PSF) size of an Engineered Diffuser in a converging / collimated beam, returning the Full-Width-at-Half-Maximum (FWHM) of the resulting top-hat PSF.</p>
+<p>Notes:</p>
+<ul>
+<li>Assumes a top-hat PSF</li>
+<li>Distance from the detector should be the optical distance, i.e., it assumes this has accounted for the optical thickness (thickness times the index of refraction of a glass) of the materials</li>
+<li>This equation is valid to first order. For more thorough analyzis, we suggest full non-sequential optical modeling in Zemax. </li>
+</ul>
+<p><img src=''></p>
+<p><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script></p>
+<form id="diffuserform" action="">
+<fieldset>
+    <h4>Calculating Expected Diffuser PSF FWHM</h4>
+    <div class='form-group row'>
+       <label for="angle" class="col-sm-4 col-form-label">Opening Angle (deg):</label>
+             <div class="col-sm-3">
+           <input id="angle" name="angle" type='number' step='0.001' min='0' value="0.34"/>
+        </div>
+    </div>
+    <div class='form-group row'>
+       <label for="distance" class="col-sm-4 col-form-label">Diffuser-to-detector distance (mm):</label>
+             <div class="col-sm-3">
+        <input id="distance" name="distance" type='number' step='0.1' min='0' value='200' />
+        </div>
+    </div>
+    <p>
+    <div class='form-group row'>
+       <label for="pixelsize" class="col-sm-4 col-form-label">Pixel Size (micron):</label>
+             <div class="col-sm-3">
+        <input id="pixelsize" name="pixelsize" type='number' step='0.01' min='0' value='13.5' />
+        </div>
+    </div>
+    <p>
+    <div class='form-group row'>
+       <label for="platescale" class="col-sm-4 col-form-label">Plate Scale ("/pix):</label>
+             <div class="col-sm-3">
+        <input id="platescale" name="platescale" type='number' step='0.001' min='0' value='0.11' />
+        </div>
+    </div>
+    <p>
+        <input class="btn btn-outline-primary" type="submit" value="Calculate" />
+        or
+        <input class="btn btn-outline-primary" type="reset" value="Reset" />
+    </p>
+    <p class="font-weight-bold">NOTE: Distance is optical length (i.e., weighted by the index of refraction).</p>
+    <p class="font-weight-bold">Default values are values for the ARCTIC/diffuser system</p>
+    <div class='form-group row'>
+       <label id='fwhm_pix_input' for="fwhm_pix" class="col-sm-4 col-form-label">Diffused PSF FWHM (pix):</label>
+             <div class="col-sm-3">
+           <input id="fwhm_pix" name="fwhm_pix" placeholder="0" readonly/>
+         </div>
+    </div>
+    <div class='form-group row'>
+       <label id='fwhm_arcsec_input' for="fwhm_arcsec" class="col-sm-4 col-form-label">Diffused PSF FWHM ("):</label>
+             <div class="col-sm-3">
+           <input id="fwhm_arcsec" name="fwhm_arcsec" placeholder="0" readonly/>
+         </div>
+    </div>
+</fieldset>
+</form>
+
+<script>
+(function () {
+    function getTanFromDegrees(degrees) {
+        return ( Math.tan(degrees * Math.PI / 180) );
+    }
+
+    function get_diffused_FWHM(angle, distance, pixelsize, platescale) {
+        // Calculate diffuser FWHM
+        // INPUT:
+        //    angle in degrees
+        //    distance in mm
+        //    pixelsize in microns
+        //    platescale in arcsec / pix
+        // OUTPUT:
+        //    FWHM in pixels
+        angle = parseFloat(angle);
+        distance = parseFloat(distance);
+        pixelsize = parseFloat(pixelsize);
+        platescale = parseFloat(platescale);
+        fwhm_in_pix = 2*getTanFromDegrees(angle/2)*distance/(pixelsize/1000);
+        return ( parseFloat(fwhm_in_pix).toFixed(2) );
+    }
+
+    var diffuserForm = document.getElementById("diffuserform");
+    if (diffuserForm) {
+        diffuserForm.onsubmit = function () {
+            fwhm_pix = get_diffused_FWHM(this.angle.value,this.distance.value,this.pixelsize.value,this.platescale.value);
+            fwhm_arcsec = fwhm_pix * this.platescale.value ;
+            this.fwhm_pix.value = fwhm_pix;
+            this.fwhm_arcsec.value = parseFloat(fwhm_arcsec).toFixed(2);
+            return false;
+        };
+    }
+}());
+</script>
+
+<h2 id="python-function">Python Function</h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../about_diffusers/" class="btn btn-neutral float-right" title="About Diffusers">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../quickstart/" class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/gummiks/idiffuse" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../quickstart/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../about_diffusers/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

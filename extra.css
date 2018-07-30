@@ -1,0 +1,9 @@
+.wy-side-nav-search img {
+    display: block;
+    margin: auto auto 0.809em auto;
+    height: 150px;
+    width: 180px;
+    background-color: #2980B9;
+    padding: 1px;
+    border-radius: 25%;
+}
