@@ -3,7 +3,15 @@
     margin: auto auto 0.809em auto;
     height: 150px;
     width: 200px;
-    background-color: #2980B9;
+    background-color: black;
     padding: 1px;
     border-radius: 25%;
+}
+
+label {
+	color: #000100;
+}
+
+#fwhm_pix {
+	color: gray;
 }
