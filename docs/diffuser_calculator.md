@@ -1,20 +1,28 @@
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script>
+
 # Sizing Diffusers
 
-iDiffuse provides two ways to calculate the expected Full Width at Half Maximum size of the We provide two ways to calculate the expected 
+`iDiffuse` provides two ways to calculate the expected Full Width at Half Maximum size of a given diffuser on the focal plane:
 
-We provide the followin on-line calculator to help determine the size of a diffuser for use on a telescope. 
+1. On-line calculator below.
+2. Python function as part of `iDiffuse`
+
+Both calculators use the following equation, 
+$$S = \tan(\theta) D,$$
+where \\(S\\) is the FWHM of the diffused PSF, \\(D\\) is the optical distance of the diffuser from the focal plane, and \\(\theta\\) is the opening angle of the diffuser as defined in the following figure:
+
+<img src='../img/diffuser_path.png'/>
+
 
 ## Online Calculator
-
 The following online calculator calculates the expected Point Spread Function (PSF) size of an Engineered Diffuser in a converging / collimated beam, returning the Full-Width-at-Half-Maximum (FWHM) of the resulting top-hat PSF.
 
 Notes:
 
 - Assumes a top-hat PSF
 - Distance from the detector should be the optical distance, i.e., it assumes this has accounted for the optical thickness (thickness times the index of refraction of a glass) of the materials
-- This equation is valid to first order. For more thorough analyzis, we suggest full non-sequential optical modeling in Zemax. 
-
-<img src=''>
+- This equation is valid to first order. For more thorough analyzis, we suggest full non-sequential optical modeling in Zemax. RPC Photonics makes this easy as they provide the as-measured scattering BSDF files freely online [https://www.rpcphotonics.com/bsdf-data-optical-diffusers/](here) 
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
@@ -108,3 +116,23 @@ Notes:
 
 
 ## Python Function
+
+Additionally `iDiffuse` provides a simple Python function that performs the same calculation as in the online calculator above.
+
+This function can be used in the following way:
+
+```
+from idiffuse import diffuser
+plt_scale = 0.11 # arcsec/pix
+fwhm_pix = diffuser.calculate_diffuser_fwhm(opening_angle=0.34,         # deg
+                                            distance_from_detector=200, # mm
+                                            pix_size=13.5)              # pixels
+fwhm_arcsec = fwhm_pix * plt_scale
+print('FWHM in pixels: {:0.3f}'.format(fwhm_pix))
+print('FWHM in arcsec: {:0.3f}'.format(fwhm_arcsec))
+```
+which gives the following output:
+```
+FWHM in pixels: 87.913
+FWHM in arcsec: 9.670
+```
