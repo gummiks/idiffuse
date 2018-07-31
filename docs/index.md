@@ -1,5 +1,5 @@
 # iDiffuse: on-sky photometric precisions with diffusers
-Welcome to the iDiffuse documentation, a Python package to calculate expected diffuser-assisted photometric precisions from the ground.
+Welcome to the `iDiffuse` documentation, a Python package to calculate expected diffuser-assisted photometric precisions from the ground.
 
 iDiffuse is currently heavily focused on calculating the diffuser-assisted photometric precision of ARCTIC on the ARC 3.5m Telescope at Apache Point Observatory. 
 
