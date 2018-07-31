@@ -10,7 +10,7 @@ Contents:
 - <a href='installation'>Installation</a>
 - <a href='quickstart'>Getting Started</a>
 - <a href='diffuser_calculator'>Sizing Diffusers</a>
-- Extending iDiffuser for other telescopes 
+- (Coming soon!) Extending `iDiffuse` for other telescopes 
 
 # More information on diffusers
 Take a look at the following discussions for further discussion on diffusers for high precision photometry applications:
