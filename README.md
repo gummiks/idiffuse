@@ -11,10 +11,10 @@ With iDiffuse you can:
 - iDiffuse can be used to calculate the expected diffuserd PSF size in different telescope systems. You can also calculate the expected PSF sizes using the following online calculator <a href='https://gummiks.github.io/idiffuse/diffuser_calculator/'>here</a>.
 
 # Documentation
-The documentation website for iDiffuse is available <a href='https://gummiks.github.io/idiffuse/installation/'>https://gummiks.github.io/idiffuse/</a>
+The documentation website for iDiffuse is available <a href='https://gummiks.github.io/idiffuse/'>https://gummiks.github.io/idiffuse/</a>
 
 # Installation
-Please see the documentation website: <a href='https://gummiks.github.io/idiffuse/installation/'>https://gummiks.github.io/idiffuse/installation/</a>
+Please see the documentation website for installation instructions: <a href='https://gummiks.github.io/idiffuse/installation/'>https://gummiks.github.io/idiffuse/installation/</a>
 
 # Tutorials / Getting started
 Either see:
@@ -23,5 +23,5 @@ Either see:
 <a href='https://gummiks.github.io/idiffuse/quickstart/'>https://gummiks.github.io/idiffuse/quickstart/</a>
 
 # Dependencies
-- pysynphot
+- pysynphot: [https://pysynphot.readthedocs.io/en/latest/](https://pysynphot.readthedocs.io/en/latest/)
 - pandas
