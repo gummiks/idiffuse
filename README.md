@@ -6,20 +6,22 @@ With iDiffuse you can:
 
 - Calculate the expected photometric precision of the ARCTIC diffuser system on the ARC 3.5m
 
-- iDiffuse is easily extendable to calculate diffuser-assisted photometric precisions on other telescopes
+- iDiffuse is modular and is easily extendable to calculate diffuser-assisted photometric precisions on other telescopes
 
-- iDiffuse can be used to calculate the expected diffuserd PSF size in different telescope systems. You can also calculate the expected PSF sizes using the following online tool <a>here</a>.
+- iDiffuse can be used to calculate the expected diffuserd PSF size in different telescope systems. You can also calculate the expected PSF sizes using the following online calculator <a href='https://gummiks.github.io/idiffuse/diffuser_calculator/'>here</a>.
 
 # Documentation
-The documentation website for iDiffuse is available <a>here</a>
+The documentation website for iDiffuse is available <a href='https://gummiks.github.io/idiffuse/installation/'>https://gummiks.github.io/idiffuse/</a>
 
 # Installation
-Please see the documentation website above
+Please see the documentation website: <a href='https://gummiks.github.io/idiffuse/installation/'>https://gummiks.github.io/idiffuse/installation/</a>
 
-# Tutorials
-See the `notebooks` directory.
+# Tutorials / Getting started
+Either see:
+- the `notebooks` directory.
+- or the Getting Started pages here: 
+<a href='https://gummiks.github.io/idiffuse/quickstart/'>https://gummiks.github.io/idiffuse/quickstart/</a>
 
 # Dependencies
-
 - pysynphot
 - pandas

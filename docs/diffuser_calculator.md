@@ -1,5 +1,7 @@
 # Sizing Diffusers
 
+iDiffuse provides two ways to calculate the expected Full Width at Half Maximum size of the We provide two ways to calculate the expected 
+
 We provide the followin on-line calculator to help determine the size of a diffuser for use on a telescope. 
 
 ## Online Calculator
