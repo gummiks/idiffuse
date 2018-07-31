@@ -64,6 +64,16 @@
             
     <li class="toctree-l2"><a href="#installation">Installation</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l3" href="#from-git">From Git</a></li>
+        
+            <li><a class="toctree-l3" href="#from-pip">From pip</a></li>
+        
+            <li><a class="toctree-l3" href="#notes">Notes</a></li>
+        
+        </ul>
+    
 
     </ul>
 	    </li>
@@ -119,7 +129,25 @@
             <div class="section">
               
                 <h1 id="installation">Installation</h1>
-<p>Testing</p>
+<p>There are two main ways to install <code>iDiffuse</code>:</p>
+<h2 id="from-git">From Git</h2>
+<p><code>iDiffuse</code> can be installed from Git in the following way:</p>
+<pre><code>git clone https://github.com/gummiks/idiffuse.git
+python setup.py install
+</code></pre>
+
+<h2 id="from-pip">From pip</h2>
+<p><code>iDiffuse</code> can be installed from pip with the following command:</p>
+<pre><code>pip install idiffuse
+</code></pre>
+
+<h2 id="notes">Notes</h2>
+<p><code>iDiffuse</code> depends on <code>pysynphot</code>, which can be set up to include a number of additional setup files as defined by the <code>PYSYN_CDBS</code> environment variable, and <code>pysynphot</code> will throw a warning if this variable is not set saying:</p>
+<pre><code>UserWarning: PYSYN_CDBS is undefined; functionality will be SEVERELY crippled.
+</code></pre>
+
+<p>However, <code>idiffuse</code> does not currently depend on that functionality in <code>pysynphot</code>, and this warning can be ignored.</p>
+<p>If the warning is annoying and/or you want to use more of the functionalities <code>pysynphot</code> has to offer, you can follow the <code>pysynphot</code> installation instruction <a href='https://pysynphot.readthedocs.io/en/latest/#installation-and-setup'>here</a></p>
               
             </div>
           </div>

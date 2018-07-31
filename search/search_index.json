@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/",
-            "text": "iDiffuse: on-sky photometric precisions with diffusers\n\n\nWelcome to the iDiffuse documentation, a Python package to calculate expected diffuser-assisted photometric precisions from the ground.\n\n\niDiffuse is currently heavily focused on calculating the diffuser-assisted photometric precision of ARCTIC on the ARC 3.5m Telescope at Apache Point Observatory. \n\n\nHowever, iDiffuse is written in a way that it is easy to modify and calculate diffuser-assisted photometric precisions for other telescopes.\n\n\nContents:\n\n\n\n\nInstallation\n\n\nGetting Started\n\n\nSizing Diffusers\n\n\nExtending iDiffuser for other telescopes \n\n\n\n\nMore information on diffusers\n\n\nTake a look at the following discussions for further discussion on diffusers for high precision photometry applications:\n\n\n\n\nMore about diffusers on this website\n\n\nPaper I\n\n\nPaper II",
+            "text": "iDiffuse: on-sky photometric precisions with diffusers\n\n\nWelcome to the \niDiffuse\n documentation, a Python package to calculate expected diffuser-assisted photometric precisions from the ground.\n\n\niDiffuse is currently heavily focused on calculating the diffuser-assisted photometric precision of ARCTIC on the ARC 3.5m Telescope at Apache Point Observatory. \n\n\nHowever, iDiffuse is written in a way that it is easy to modify and calculate diffuser-assisted photometric precisions for other telescopes.\n\n\nContents:\n\n\n\n\nInstallation\n\n\nGetting Started\n\n\nSizing Diffusers\n\n\n(Coming soon!) Extending \niDiffuse\n for other telescopes \n\n\n\n\nMore information on diffusers\n\n\nTake a look at the following discussions for further discussion on diffusers for high precision photometry applications:\n\n\n\n\nMore about diffusers on this website\n\n\nPaper I\n\n\nPaper II",
             "title": "Home"
         },
         {
             "location": "/#idiffuse-on-sky-photometric-precisions-with-diffusers",
-            "text": "Welcome to the iDiffuse documentation, a Python package to calculate expected diffuser-assisted photometric precisions from the ground.  iDiffuse is currently heavily focused on calculating the diffuser-assisted photometric precision of ARCTIC on the ARC 3.5m Telescope at Apache Point Observatory.   However, iDiffuse is written in a way that it is easy to modify and calculate diffuser-assisted photometric precisions for other telescopes.  Contents:   Installation  Getting Started  Sizing Diffusers  Extending iDiffuser for other telescopes",
+            "text": "Welcome to the  iDiffuse  documentation, a Python package to calculate expected diffuser-assisted photometric precisions from the ground.  iDiffuse is currently heavily focused on calculating the diffuser-assisted photometric precision of ARCTIC on the ARC 3.5m Telescope at Apache Point Observatory.   However, iDiffuse is written in a way that it is easy to modify and calculate diffuser-assisted photometric precisions for other telescopes.  Contents:   Installation  Getting Started  Sizing Diffusers  (Coming soon!) Extending  iDiffuse  for other telescopes",
             "title": "iDiffuse: on-sky photometric precisions with diffusers"
         },
         {
@@ -17,13 +17,28 @@
         },
         {
             "location": "/installation/",
-            "text": "Installation\n\n\nTesting",
+            "text": "Installation\n\n\nThere are two main ways to install \niDiffuse\n:\n\n\nFrom Git\n\n\niDiffuse\n can be installed from Git in the following way:\n\n\ngit clone https://github.com/gummiks/idiffuse.git\npython setup.py install\n\n\n\n\nFrom pip\n\n\niDiffuse\n can be installed from pip with the following command:\n\n\npip install idiffuse\n\n\n\n\nNotes\n\n\niDiffuse\n depends on \npysynphot\n, which can be set up to include a number of additional setup files as defined by the \nPYSYN_CDBS\n environment variable, and \npysynphot\n will throw a warning if this variable is not set saying:\n\n\nUserWarning: PYSYN_CDBS is undefined; functionality will be SEVERELY crippled.\n\n\n\n\nHowever, \nidiffuse\n does not currently depend on that functionality in \npysynphot\n, and this warning can be ignored.\n\n\nIf the warning is annoying and/or you want to use more of the functionalities \npysynphot\n has to offer, you can follow the \npysynphot\n installation instruction \nhere",
             "title": "Installation"
         },
         {
             "location": "/installation/#installation",
-            "text": "Testing",
+            "text": "There are two main ways to install  iDiffuse :",
             "title": "Installation"
+        },
+        {
+            "location": "/installation/#from-git",
+            "text": "iDiffuse  can be installed from Git in the following way:  git clone https://github.com/gummiks/idiffuse.git\npython setup.py install",
+            "title": "From Git"
+        },
+        {
+            "location": "/installation/#from-pip",
+            "text": "iDiffuse  can be installed from pip with the following command:  pip install idiffuse",
+            "title": "From pip"
+        },
+        {
+            "location": "/installation/#notes",
+            "text": "iDiffuse  depends on  pysynphot , which can be set up to include a number of additional setup files as defined by the  PYSYN_CDBS  environment variable, and  pysynphot  will throw a warning if this variable is not set saying:  UserWarning: PYSYN_CDBS is undefined; functionality will be SEVERELY crippled.  However,  idiffuse  does not currently depend on that functionality in  pysynphot , and this warning can be ignored.  If the warning is annoying and/or you want to use more of the functionalities  pysynphot  has to offer, you can follow the  pysynphot  installation instruction  here",
+            "title": "Notes"
         },
         {
             "location": "/quickstart/",
