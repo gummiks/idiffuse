@@ -1,20 +1,13 @@
 from __future__ import print_function
-import scipy.constants as const
 import numpy as np
 import pandas as pd
-import photometry
-import diffuser
+import idiffuse.photometry as photometry
+import idiffuse.diffuser as diffuser
 import pysynphot as S
 import matplotlib.pyplot as plt
 import os
 import glob
 
-# Get filter names, save as a dict
-DIRNAME = os.path.dirname(__file__)
-FILTER_DIRNAME = os.path.join(DIRNAME,'filters')
-FILTER_FILENAMES = glob.glob(os.path.join(FILTER_DIRNAME,"*"))
-FILTER_BASENAMES = [os.path.basename(i) for i in FILTER_FILENAMES]
-FILTER_DICT = dict(zip(FILTER_BASENAMES, FILTER_FILENAMES))
 
 class Telescope(object):
     """
@@ -28,7 +21,12 @@ class Telescope(object):
     EXAMPLE:
         See TelescopeARC() class, which implements the ARC 3.5m telescope at APO
     """
-    FILTER_DICT = FILTER_DICT
+    # Get filter names, save as a dict
+    DIRNAME = os.path.dirname(__file__)
+    FILTER_DIRNAME = os.path.join(DIRNAME,'filters')
+    FILTER_FILENAMES = glob.glob(os.path.join(FILTER_DIRNAME,"*"))
+    FILTER_BASENAMES = [os.path.basename(i) for i in FILTER_FILENAMES]
+    FILTER_DICT = dict(zip(FILTER_BASENAMES, FILTER_FILENAMES))
     def __init__(self,
                  name,
                  diameter,
@@ -110,7 +108,7 @@ class Telescope(object):
         outstring += "Altitude (m):   \t\t{:0.3f}".format(self.altitude)+"\n"
         outstring += "Central Obstruction (%): \t{:0.3f}".format(self.central_obstruction*100)+"\n"
         outstring += "Diffuser dist to detector (mm):\t{:0.3f}".format(self.diffuser_dist_from_detector)+"\n"
-        outstring += "{} available filters in folder:\t{}".format(len(FILTER_DICT),FILTER_DIRNAME)+"\n"
+        outstring += "{} available filters in folder:\t{}".format(len(self.FILTER_DICT),self.FILTER_DIRNAME)+"\n"
         return outstring
 
     def get_filter_filenames(self):
@@ -335,7 +333,7 @@ class TelescopeARC(Telescope):
         Inherits Telescope()
         Can use this as a blueprint to create different classes that implement other telescopes
     """
-    qe_file = FILTER_DICT['arctic_qe.txt']
+    qe_file = Telescope.FILTER_DICT['arctic_qe.txt']
     def __init__(self):
         # Transmission / reflectivity of different elements to calculate throughput
         _e_diff         = 0.90 # transmission
