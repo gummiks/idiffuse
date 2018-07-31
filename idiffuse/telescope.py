@@ -80,7 +80,6 @@ class Telescope(object):
         self.central_obstruction         = central_obstruction
         self.QE                          = QE
         self.Throughput                  = Throughput
-        self.area                        = np.pi*((self.diameter/2.)**2.)*(1-self.central_obstruction)
 
         # Diffuser related values
         self.diffuser_angle              = diffuser_angle
@@ -161,6 +160,13 @@ class Telescope(object):
     def __repr__(self):
         return '{} D={:0.1f}cm Throughput={:0.3f}%'.format(self.__class__,self.diameter,100*float(str(self.Throughput)))
 
+    @property
+    def area(self):
+        """
+        Area of the telescope in cm2, accounts for central obstruction
+        """
+        return np.pi*((self.diameter/2.)**2.)*(1-self.central_obstruction)
+
     def get_adu_per_sec(self,vegamag,BandPass):
         """
         Get the photon count in phot/s for a star with a Vega magnitude of *vegamag* in a given pysynphot.BandPass
@@ -182,7 +188,7 @@ class Telescope(object):
         # Use Vega magnitudes
         VegaSpectrum = S.Vega.renorm(vegamag,'vegamag',CombinedBP)
         # Define observation
-        obs = S.Observation(VegaSpectrum, CombinedBP)
+        obs = S.Observation(VegaSpectrum, CombinedBP, binset=VegaSpectrum.GetWaveSet())
         # pysynphot is automatically set up to calculate for Hubble, we just need to scale the area
         hubble_area = S.refs.PRIMARY_AREA
         electrons_per_sec = (obs.countrate()/hubble_area)*self.area # electrons per second, as we are using QE information

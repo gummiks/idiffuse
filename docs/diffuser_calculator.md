@@ -46,7 +46,7 @@ Notes:
 	<div class='form-group row'>
   	   <label for="pixelsize" class="col-sm-4 col-form-label">Pixel Size (micron):</label>
              <div class="col-sm-3">
-		<input id="pixelsize" name="pixelsize" type='number' step='0.01' min='0' value='13.5' />
+		<input id="pixelsize" name="pixelsize" type='number' step='0.01' min='0' value='15' />
 	    </div>
 	</div>
 	<p>
@@ -126,13 +126,13 @@ from idiffuse import diffuser
 plt_scale = 0.11 # arcsec/pix
 fwhm_pix = diffuser.calculate_diffuser_fwhm(opening_angle=0.34,         # deg
                                             distance_from_detector=200, # mm
-                                            pix_size=13.5)              # pixels
+                                            pix_size=15)              # pixels
 fwhm_arcsec = fwhm_pix * plt_scale
 print('FWHM in pixels: {:0.3f}'.format(fwhm_pix))
 print('FWHM in arcsec: {:0.3f}'.format(fwhm_arcsec))
 ```
 which gives the following output:
 ```
-FWHM in pixels: 87.913
-FWHM in arcsec: 9.670
+FWHM in pixels: 79.122
+FWHM in arcsec: 8.703
 ```

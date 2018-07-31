@@ -6,7 +6,7 @@ def readme():
 
 setup(name='idiffuse',
       version='0.0.1',
-      description='Tool to calculate on-sky diffuser-assisted photometric precisions',
+      description='A tool to calculate on-sky diffuser-assisted photometric precisions',
       long_description=readme(),
       url='https://github.com/gummiks/idiffuse',
       author='Gudmundur Stefansson',
