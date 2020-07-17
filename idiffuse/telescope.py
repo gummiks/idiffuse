@@ -365,3 +365,40 @@ class TelescopeARC(Telescope):
                            Throughput=S.UniformTransmission(_tot_throughput),
                            diffuser_angle = 0.34,
                            diffuser_dist_from_detector = 200.)    # from 0 to 1
+
+
+#--------------------------------
+class TelescopePSUCDK24(Telescope):
+    """
+    Telescope class implementing the Penn State 24" telescope 
+    
+    NOTES:
+        Inherits Telescope()
+        reflectivity = 0.96*0.96*0.995*0.995
+        QE = 0.6 # rough mean QE in I
+    """
+    # Transmission / reflectivity of different elements to calculate throughput
+    _e_diff         = 0.90 # transmission
+    _e_lens         = 0.99*0.99
+    _e_mirr         = 0.96*0.96
+    _e_atmosphere   = 0.5 # fudgefactor for atmosphere, assume 50%
+    _tot_throughput = _e_diff*_e_lens*_e_mirr*_e_atmosphere
+    def __init__(self):
+        Telescope.__init__(self,
+                           name='PSU 0.6m',           #Name of the telescope
+                           diameter=61.,              #cm
+                           fnum=6.5,                  #
+                           flength=3.965,             #m
+                           gain=1.0,                  #e/ADU
+                           pix_size=13.5,             #microns
+                           fov=24.,                   #arcmin, not really needed
+                           num_pix=2048.,             #pixels on x-axis of detector
+                           plt_scale=0.703,           #arcsec/pix
+                           dark_noise=22.8,           #electrons
+                           read_noise=18.,            #e^2
+                           altitude=359.,             #m
+                           central_obstruction=0.47,  # from 0 to 1
+                           QE=S.FileBandpass(self.qe_file), # Lets just use the same as for ARCTIC for now
+                           Throughput=S.UniformTransmission(_tot_throughput),
+                           diffuser_angle = 0.34,
+                           diffuser_dist_from_detector = 53.)    # from 0 to 1

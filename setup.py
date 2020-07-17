@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 setup(name='idiffuse',
-      version='0.0.1',
+      version='0.1.0',
       description='A tool to calculate on-sky diffuser-assisted photometric precisions',
       long_description=readme(),
       url='https://github.com/gummiks/idiffuse',
